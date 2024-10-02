@@ -38,10 +38,9 @@ test: $(OBJ) $(TOBJ)
 	$(CC) $(CFLAGS) -I$(HEADER) -o test_runner $(TEST_DIR)/test_main.c -L. -lft
 	./test_runner
 
-# Rule to clean object files
 clean:
-	rm -rf $(OBJ) $(TOBJ)
-
+	rm -rf $(OBJ) $(TOBJ) $(SOURCE_DIR)/*.o $(TEST_DIR)/*.o
+	
 # Rule to clean everything (object files + library + test binaries)
 fclean: clean
 	rm -rf $(NAME) test_runner
@@ -51,4 +50,7 @@ re: fclean all
 
 # Declare targets as PHONY to avoid conflicts with actual file names
 .PHONY: all clean fclean re test
+
+
+
 
