@@ -1,56 +1,53 @@
-# Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
-# Library name
 NAME = libft.a
 
-# Directories
 SOURCE_DIR = ./source
 TEST_DIR = ./.tests
 HEADER = ./includes
+BUILD = ./build
 
-# Source files
-FUNCTIONS_NAMES = ft_isalpha.c   # Add your actual .c files
-
-# File paths for source and test files
+FUNCTIONS_NAMES = ft_isalpha.c ft_isdigit.c
 SOURCE_FILES = $(addprefix $(SOURCE_DIR)/,$(FUNCTIONS_NAMES))
-TEST_FILES = $(addprefix $(TEST_DIR)/test_,$(FUNCTIONS_NAMES))
-TEST_FILES += $(TEST_DIR)/test_main.c
+OBJ_FILES = $(addprefix $(BUILD)/,$(FUNCTIONS_NAMES:.c=.o))
 
-# Object files for source and test files
-OBJ = $(SOURCE_FILES:.c=.o)
-TOBJ = $(TEST_FILES:.c=.o)
+TEST_FUNCTIONS = test_ft_isalpha.c test_ft_isdigit.c main.c
+TEST_FILES = $(addprefix $(TEST_DIR)/,$(TEST_FUNCTIONS))
+TEST_OBJ = $(addprefix $(BUILD)/,$(TEST_FUNCTIONS:.c=.o))
 
-# Rule to compile the library
+#main build targets used in the make 
+ 
 all: $(NAME)
 
-# Rule to create .o files from .c files (for sources and TEST_FILES)
-%.o: %.c
-	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
+$(NAME): $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJ_FILES)
 
-# Rule to build the library from object files
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-
-# Rule to compile and run TEST_FILES
-test: $(OBJ) $(TOBJ)
-	$(CC) $(CFLAGS) -I$(HEADER) -o test_runner $(TEST_DIR)/test_main.c -L. -lft
+test: $(NAME) $(TEST_OBJ)
+	$(CC) $(CFLAGS) -I$(HEADER) -o test_runner $(TEST_OBJ) -L. -lft
 	./test_runner
 
+#compilation rules
+
+#regle to create build files from source files and to create a build folder and compile source into object 
+$(BUILD)/%.o: $(SOURCE_DIR)/%.c
+	@mkdir -p $(BUILD)
+	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
+
+#rule to create build files from the test files .c (same as above)
+$(BUILD)/%.o: $(TEST_DIR)/%.c
+	@mkdir -p $(BUILD)
+	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
+
+#cleaning rules 
+
 clean:
-	rm -rf $(OBJ) $(TOBJ) $(SOURCE_DIR)/*.o $(TEST_DIR)/*.o
-	
-# Rule to clean everything (object files + library + test binaries)
-fclean: clean
+	rm -rf $(BUILD)/*.o
+
+fclean: clean 
 	rm -rf $(NAME) test_runner
 
-# Rule to force recompilation (clean + recompile everything)
 re: fclean all
 
-# Declare targets as PHONY to avoid conflicts with actual file names
 .PHONY: all clean fclean re test
-
-
-
 

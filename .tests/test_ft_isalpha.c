@@ -2,22 +2,21 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void	test(char c, int expected)
+void	tester_isalpha(char c, int expected)
 {
 	int result = ft_isalpha(c);
-	if(result != expected)
-		printf("argument: %c | expected:  %d | result: %d\n", c, expected, result);
+	
+	if (result != expected)
+		printf("tester_isalpha failed for argument: %c | Expected: %d | Result: %d\n", c, expected, result);
 }
 
-int test_ft_isalpha()
+void test_ft_isalpha()
 {
-	test('a', 1);
-	test('b', 1);
-	test('A', 1);
-	test('B', 1);
-	test('\n', 1);
-	test('.', 0);
-	test('=', 0);
-	test('}', 0);
-	return (0);
+	tester_isalpha('a', 0);
+	tester_isalpha('b', 1);
+	tester_isalpha('A', 1);
+	tester_isalpha('B', 1);
+	tester_isalpha('.', 0);   // '.' is not alphabetic, so expect 0
+	tester_isalpha('=', 0);   // '=' is not alphabetic, so expect 0
+	tester_isalpha('}', 0);   // '}' is not alphabetic, so expect 0
 }
