@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void	tester_isalpha(char c, int expected)
+void	tester_isalpha(char c)
 {
+	int expected = isalpha(c);
 	int result = ft_isalpha(c);
 	
 	if (result != expected)
@@ -12,11 +13,11 @@ void	tester_isalpha(char c, int expected)
 
 void test_ft_isalpha()
 {
-	tester_isalpha('a', 0);
-	tester_isalpha('b', 1);
-	tester_isalpha('A', 1);
-	tester_isalpha('B', 1);
-	tester_isalpha('.', 0);   // '.' is not alphabetic, so expect 0
-	tester_isalpha('=', 0);   // '=' is not alphabetic, so expect 0
-	tester_isalpha('}', 0);   // '}' is not alphabetic, so expect 0
+	tester_isalpha('a');
+	tester_isalpha('b');
+	tester_isalpha('A');
+	tester_isalpha('B');
+	tester_isalpha('.');// '.' is not alphabetic, so expect 0
+	tester_isalpha('='); // '=' is not alphabetic, so expect 0
+	tester_isalpha('}');  // '}' is not alphabetic, so expect 0
 }
