@@ -2,23 +2,36 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void	tester_isalnum(char c)
+int	tester_isalnum(char c)
 {
-	int	result = ft_isalnum(c);
 	int	expected = isalnum(c);
-
+	int	result = ft_isalnum(c);
+	
 	if (result != expected)
-		printf("tester_isalnum failed for argument: %c | Expected: %d | Result: %d\n", c, expected, result);
+	{
+		printf("ft_isalnum failed for argument: '%c' | Expected: %d | Result: %d\n", c, expected, result);
+		return (1);
+	}
+	return (0);
 }
 
-void test_isalnum()
+int	test_ft_isalnum()
 {
-	tester_isalnum('A');
-	tester_isalnum('b');
-	tester_isalnum('9');
-	tester_isalnum('0');
-	tester_isalnum(']');
-	tester_isalnum('.');
-	tester_isalnum('/');
-	tester_isalnum('h');
+	int	failures = 0;
+
+	failures += tester_isalnum('A');
+	failures += tester_isalnum('b');
+	failures += tester_isalnum('9');
+	failures += tester_isalnum('0');
+	failures += tester_isalnum(']');
+	failures += tester_isalnum('.');
+	failures += tester_isalnum('/');
+	failures += tester_isalnum('h');
+
+	if (failures == 0)
+		printf("ft_isalnum: All tests passed.\n");
+	else
+		printf("ft_isalnum: %d tests failed.\n", failures);
+
+	return (failures);
 }

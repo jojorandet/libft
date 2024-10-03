@@ -8,11 +8,11 @@ TEST_DIR = ./.tests
 HEADER = ./includes
 BUILD = ./build
 
-FUNCTIONS_NAMES = ft_isalpha.c ft_isdigit.c ft_isalnum.c
+FUNCTIONS_NAMES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c
 SOURCE_FILES = $(addprefix $(SOURCE_DIR)/,$(FUNCTIONS_NAMES))
 OBJ_FILES = $(addprefix $(BUILD)/,$(FUNCTIONS_NAMES:.c=.o))
 
-TEST_FUNCTIONS = test_ft_isalpha.c test_ft_isdigit.c test_ft_isalnum.c main.c
+TEST_FUNCTIONS = test_ft_isalpha.c test_ft_isdigit.c test_ft_isalnum.c test_ft_isascii.c main.c
 TEST_FILES = $(addprefix $(TEST_DIR)/,$(TEST_FUNCTIONS))
 TEST_OBJ = $(addprefix $(BUILD)/,$(TEST_FUNCTIONS:.c=.o))
 

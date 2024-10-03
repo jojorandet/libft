@@ -2,22 +2,36 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void	tester_isalpha(char c)
+int	tester_isalpha(char c)
 {
 	int expected = isalpha(c);
 	int result = ft_isalpha(c);
 	
 	if (result != expected)
-		printf("tester_isalpha failed for argument: %c | Expected: %d | Result: %d\n", c, expected, result);
+	{
+		printf("ft_isalpha failed for argument: '%c' | Expected: %d | Result: %d\n", c, expected, result);
+		return (1);
+	}
+	return (0);
 }
 
-void test_ft_isalpha()
+int test_ft_isalpha()
 {
-	tester_isalpha('a');
-	tester_isalpha('b');
-	tester_isalpha('A');
-	tester_isalpha('B');
-	tester_isalpha('.');// '.' is not alphabetic, so expect 0
-	tester_isalpha('='); // '=' is not alphabetic, so expect 0
-	tester_isalpha('}');  // '}' is not alphabetic, so expect 0
+	int failures = 0;
+
+	failures += tester_isalpha('a');
+	failures += tester_isalpha('b');
+	failures += tester_isalpha('A');
+	failures += tester_isalpha('B');
+	failures += tester_isalpha('.');
+	failures += tester_isalpha('=');
+	failures += tester_isalpha('}');
+
+	// Return the total number of failed tests
+	if (failures == 0)
+		printf("ft_isalpha: All tests passed.\n");
+	else
+		printf("ft_isalpha: %d tests failed.\n", failures);
+
+	return (failures);
 }
