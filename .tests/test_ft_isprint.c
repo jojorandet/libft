@@ -19,24 +19,23 @@ int	test_ft_isprint()
 {
 	int failures = 0;
 	
-	// Testing digits
 	failures = failures + tester_isprint('9');
 	failures += tester_isprint('0');
 	failures += tester_isprint('5');
 
-	// Testing non-digit characters
-	failures += tester_isprint('A');  // Uppercase letter
-	failures += tester_isprint('z');  // Lowercase letter
-	failures += tester_isprint('-');  // Symbol
-	failures += tester_isprint('=');  // Symbol
-	failures += tester_isprint('!');  // Symbol
-	failures += tester_isprint('~');  // Symbol
+
+	failures += tester_isprint('A');
+	failures += tester_isprint('z'); 
+	failures += tester_isprint('-'); 
+	failures += tester_isprint('='); 
+	failures += tester_isprint('!');  
+	failures += tester_isprint('~');  
 
 	// Testing for the space character
 	failures += tester_isprint(' ');  // Space
 
 	// Testing non-printable escape characters
-	failures += tester_isprint('\0'); // Null character
+	failures += tester_isprint('\0'); 
 	failures += tester_isprint('\n'); // Newline
 	failures += tester_isprint('\t'); // tab
 

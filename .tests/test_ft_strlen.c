@@ -37,7 +37,6 @@ int	test_ft_strlen()
 
 	//superlongstring
 	char	superlongstring[] = "hhhhhuggtrftrdftggftde4t5rfg5yr6fghygtrf5tyguhhuygtf5r6tgy7huscvbcncfdsdffghggfdsghjfhdgfsdghfdgsfdghgjfhgdfssgdhfgfghfjhdgsfdfghfdgsfafgdhfjghdgsfasfghjfhgdfdfgdfhdgfsdfhdgsd";
-	printf("%s", superlongstring);
 	failures += tester_strlen(superlongstring);
 
 	if (failures == 0)

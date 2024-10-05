@@ -19,30 +19,30 @@ int	test_ft_isascii()
 {
 	int failures = 0;
 	
-	// Testing digits
+
 	failures = failures + tester_isascii('9');
 	failures += tester_isascii('0');
 	failures += tester_isascii('5');
 
-	// Testing non-digit characters
-	failures += tester_isascii('A');  // Uppercase letter
-	failures += tester_isascii('z');  // Lowercase letter
-	failures += tester_isascii('-');  // Symbol
-	failures += tester_isascii('=');  // Symbol
 
-	// Testing whitespace characters
-	failures += tester_isascii(' ');  // Space
-	failures += tester_isascii('\t'); // Tab
+	failures += tester_isascii('A');
+	failures += tester_isascii('z');
+	failures += tester_isascii('-');
+	failures += tester_isascii('=');
 
-	// Testing non-printable characters
-	failures += tester_isascii('\0'); // Null character
-	failures += tester_isascii('\n'); // Newline
 
-	// Testing boundary values
-	failures += tester_isascii(47);  // ASCII value before '0'
-	failures += tester_isascii(58);  // ASCII value after '9'
+	failures += tester_isascii(' ');
+	failures += tester_isascii('\t');
 
-		// Return the total number of failed tests
+
+	failures += tester_isascii('\0');
+	failures += tester_isascii('\n');
+
+
+	failures += tester_isascii(47);
+	failures += tester_isascii(58);
+
+
 	if (failures == 0)
 		printf("ft_isascii: All tests passed.\n");
 	else

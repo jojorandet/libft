@@ -6,13 +6,11 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 23:37:02 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/05 17:05:53 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/05 19:50:09 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {

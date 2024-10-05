@@ -1,6 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
+#include <stddef.h>
 
 int	tester_memcpy(void *restrict dst1, void *restrict dst2, void *restrict src, size_t n)
 {
@@ -27,8 +28,6 @@ int	test_ft_memcpy()
 	char	dst1[100];
 	char	dst2[100];
 	char	src[] = "hello";
-
-	ft_bzero.c
 
 	failures =  0;
 	failures += tester_memcpy((void *)dst1, (void *)dst2, (void *)src, 5);

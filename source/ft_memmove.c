@@ -1,28 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 16:54:05 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/05 19:51:21 by jrandet          ###   ########.fr       */
+/*   Created: 2024/10/05 19:40:54 by jrandet           #+#    #+#             */
+/*   Updated: 2024/10/05 22:26:44 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void	*b, int c, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*testpointer;
+	unsigned char *dst1;
+	unsigned char *src1;
 	size_t			i;
 
-	testpointer = (unsigned char *)b;
+	dst1 = (unsigned char *)dst;
+	src1 = (unsigned char *)src;
 	i = 0;
 	while (i < len)
 	{
-		testpointer[i] = (unsigned char)c;
-		i++;
+		if (dest1 < src1)
+		{
+			dest1[i] = src1[i];
+			i++;
+		}
+		else if (src1 < dst1)
+		{
+			i = len;
+			while (i > 0)
+			{
+				i--;
+				dst1[i] = src1[i];
+			}
+		}
 	}
-	return (b);
+	return (dst);
+}
+
+int main()
+{
+	char	dst[100];
+	char	src[] = "hallo";
+
+	printf("%s", ft_memmove((void *)dst, (void *)src, 5));
+	return (0);
 }

@@ -1,6 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
+#include <stddef.h>
 
 int	tester_memset(void *b1, void *b2, int c, size_t len)
 {
@@ -14,13 +15,12 @@ int	tester_memset(void *b1, void *b2, int c, size_t len)
 		if(expected[i] != result[i])
 		{
 			printf("ft_memset failed at byte %zu for c = %d and len = %zu\n", i, c, len);
-			return (1); //this exits the while loop
+			return (1);
 		}
-		i++;// increment the i inside the while loop if it returns 0
+		i++;
 	}
 	return (0);	
 }
-//we could have also done a strcmp
 
 int	test_ft_memset()
 {
@@ -31,7 +31,7 @@ int	test_ft_memset()
 	failures =  0;
 	failures += tester_memset(b1, b2, 'A', 5);
 	failures += tester_memset(b1, b2, 0, 20);
-	failures += tester_memset(b1, b2, 255, 15); //255 is the highest value 
+	failures += tester_memset(b1, b2, 255, 15);
 
 	if(failures == 0)
 	{
