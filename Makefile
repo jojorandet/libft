@@ -8,11 +8,18 @@ TEST_DIR = ./.tests
 HEADER = ./includes
 BUILD = ./build
 
-FUNCTIONS_NAMES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c
+FUNCTIONS_NAMES = ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isalnum.c \
+				ft_isascii.c \
+				ft_isprint.c\
+				ft_strlen.c\
+
 SOURCE_FILES = $(addprefix $(SOURCE_DIR)/,$(FUNCTIONS_NAMES))
 OBJ_FILES = $(addprefix $(BUILD)/,$(FUNCTIONS_NAMES:.c=.o))
 
-TEST_FUNCTIONS = test_ft_isalpha.c test_ft_isdigit.c test_ft_isalnum.c test_ft_isascii.c main.c
+TEST_FUNCTIONS = test_ft_isalpha.c test_ft_isdigit.c test_ft_isalnum.c test_ft_isascii.c test_ft_isprint.c \
+				test_ft_strlen.c main.c 
 TEST_FILES = $(addprefix $(TEST_DIR)/,$(TEST_FUNCTIONS))
 TEST_OBJ = $(addprefix $(BUILD)/,$(TEST_FUNCTIONS:.c=.o))
 
@@ -23,7 +30,7 @@ $(NAME): $(OBJ_FILES)
 	ar rcs $(NAME) $(OBJ_FILES)
 
 test: $(NAME) $(TEST_OBJ)
-	$(CC) $(CFLAGS) -I$(HEADER) -o test_runner $(TEST_OBJ) -L. -lft
+	$(CC) $(CFLAGS) -I$(HEADER) -fsanitize=address -o test_runner $(TEST_OBJ) -L. -lft
 	./test_runner
 
 #compilation rules

@@ -1,0 +1,47 @@
+#include "libft.h"
+#include <stdio.h>
+#include <string.h>
+
+int	tester_memcpy(void *restrict dst1, void *restrict dst2, void *restrict src, size_t n)
+{
+	unsigned char *expected = (unsigned char *)memcpy(dst1, src, n);
+	unsigned char *result = (unsigned char *)ft_memcpy(dst2, src, n);
+	size_t	i;
+
+	i = 0;
+	while(i < n)
+	{
+		if(expected[i] != result[i])
+		{
+			printf("ft_memcpy failed at byte %zu for len = %zu\n", i, n);
+			return (1);
+		}
+		i++;
+	}
+	return (0);	
+}
+
+int	test_ft_memcpy()
+{
+	int		failures;
+	char	dst1[100];
+	char	dst2[100];
+	char	src[] = "hello";
+
+	ft_bzero.c
+
+	failures =  0;
+	failures += tester_memcpy((void *)dst1, (void *)dst2, (void *)src, 5);
+	failures += tester_memcpy((void *)dst1, (void *)dst2, (void *)src, 0);
+	failures += tester_memcpy((void *)dst1, (void *)dst2, (void *)src, 3);
+
+	if(failures == 0)
+	{
+		printf("All tests for ft_memcpy passed\n");
+	}
+	else
+	{
+		printf("%d tests failed for the ft_memcpy\n", failures);
+	}
+	return (failures);
+}

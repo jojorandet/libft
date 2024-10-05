@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 20:02:44 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/04 23:32:40 by jrandet          ###   ########.fr       */
+/*   Created: 2024/10/03 16:54:05 by jrandet           #+#    #+#             */
+/*   Updated: 2024/10/05 17:10:31 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+void	*ft_memset(void	*b, int c, size_t len)
 {
-	if (0 <= c && c <= 127)
-		return (1);
-	return (0);
+	unsigned char	*testpointer;
+	size_t			i;
+
+	testpointer = (unsigned char *)b;
+	i = 0;
+	while (i < len)
+	{
+		testpointer[i] = (unsigned char)c;
+		i++;
+	}
+	return (b);
 }
