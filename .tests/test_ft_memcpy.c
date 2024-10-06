@@ -36,11 +36,11 @@ int	test_ft_memcpy()
 
 	if(failures == 0)
 	{
-		printf("All tests for ft_memcpy passed\n");
+		printf("ft_memcpy: All tests passed.\n");
 	}
 	else
 	{
-		printf("%d tests failed for the ft_memcpy\n", failures);
+		printf("ft_memcpy: %d tests failed.\n", failures);
 	}
 	return (failures);
 }
