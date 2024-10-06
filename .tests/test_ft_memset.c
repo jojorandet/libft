@@ -35,11 +35,11 @@ int	test_ft_memset()
 
 	if(failures == 0)
 	{
-		printf("All tests for ft_memset passed\n");
+		printf("ft_memset: All tests passed.\n");
 	}
 	else
 	{
-		printf("%d tests failed for the ft_memset\n", failures);
+		printf("ft_memset: %d tests failed.\n", failures);
 	}
 	return (failures);
 }

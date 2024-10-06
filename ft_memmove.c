@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 19:40:54 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/05 22:26:44 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/06 16:15:56 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		if (dest1 < src1)
+		if (dst1 < src1)
 		{
-			dest1[i] = src1[i];
+			dst1[i] = src1[i];
 			i++;
 		}
 		else if (src1 < dst1)
@@ -46,6 +46,8 @@ int main()
 	char	dst[100];
 	char	src[] = "hallo";
 
-	printf("%s", ft_memmove((void *)dst, (void *)src, 5));
+	ft_memmove(dst, src, 5);
+	printf("Test1, no overlap: %s\n", dst);
+	
 	return (0);
 }

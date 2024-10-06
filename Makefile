@@ -1,12 +1,10 @@
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
-SOURCE_DIR = ./source
 TEST_DIR = ./.tests
-HEADER = ./includes
-BUILD = ./build
+HEADER_DIR = .
 
 FUNCTIONS_NAMES = ft_isalpha.c \
 				ft_isdigit.c \
@@ -18,8 +16,7 @@ FUNCTIONS_NAMES = ft_isalpha.c \
 				ft_bzero.c \
 				ft_memcpy.c \
 
-SOURCE_FILES = $(addprefix $(SOURCE_DIR)/,$(FUNCTIONS_NAMES))
-OBJ_FILES = $(addprefix $(BUILD)/,$(FUNCTIONS_NAMES:.c=.o))
+OBJECT_FILES = $(FUNCTIONS_NAMES:.c=.o)
 
 TEST_FUNCTIONS = test_ft_isalpha.c \
 				test_ft_isdigit.c \
@@ -32,33 +29,24 @@ TEST_FUNCTIONS = test_ft_isalpha.c \
 				test_ft_memcpy.c \
 				main.c 
 TEST_FILES = $(addprefix $(TEST_DIR)/,$(TEST_FUNCTIONS))
-TEST_OBJ = $(addprefix $(BUILD)/,$(TEST_FUNCTIONS:.c=.o))
+TEST_OBJECT_FILES = $(TEST_FILES:.c=.o)
 
-#main build targets used in the make 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES)
-	ar rcs $(NAME) $(OBJ_FILES)
+$(NAME): $(OBJECT_FILES)
+	ar rcs $(NAME) $(OBJECT_FILES)
 
-test: $(NAME) $(TEST_OBJ)
-	$(CC) $(CFLAGS) -I$(HEADER) -fsanitize=address -o test_runner $(TEST_OBJ) -L. -lft
+test: $(NAME) $(TEST_OBJECT_FILES)
+	$(CC) $(CFLAGS) -I$(HEADER_DIR) -fsanitize=address -o test_runner $(TEST_OBJECT_FILES) -L. -lft
 	./test_runner
 
-#compilation rules
-$(BUILD)/%.o: $(SOURCE_DIR)/%.c
-	@mkdir -p $(BUILD)
-	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
+$(TEST_DIR)/%.o: $(TEST_DIR)/%.c
+	$(CC) $(CFLAGS) -I$(HEADER_DIR) -c $< -o $@
 
-$(BUILD)/%.o: $(TEST_DIR)/%.c
-	@mkdir -p $(BUILD)
-	$(CC) $(CFLAGS) -I$(HEADER) -c $< -o $@
-
-#cleaning rules 
 clean:
-	rm -rf $(BUILD)/*.o
+	rm -f $(OBJECT_FILES) $(TEST_OBJECT_FILES)
 
-fclean: clean 
-	rm -rf $(NAME) test_runner
+fclean: clean
 
 re: fclean all
 
