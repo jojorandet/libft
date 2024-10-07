@@ -30,8 +30,16 @@ int	test_ft_memcpy()
 	char	src[] = "hello";
 
 	failures =  0;
+	ft_bzero(dst1, sizeof(dst1));
+	ft_bzero(dst2, sizeof(dst2));
 	failures += tester_memcpy((void *)dst1, (void *)dst2, (void *)src, 5);
+
+	ft_bzero(dst1, sizeof(dst1));
+	ft_bzero(dst2, sizeof(dst2));
 	failures += tester_memcpy((void *)dst1, (void *)dst2, (void *)src, 0);
+
+	ft_bzero(dst1, sizeof(dst1));
+	ft_bzero(dst2, sizeof(dst2));
 	failures += tester_memcpy((void *)dst1, (void *)dst2, (void *)src, 3);
 
 	if(failures == 0)

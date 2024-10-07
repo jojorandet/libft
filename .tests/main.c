@@ -8,6 +8,7 @@ int	test_ft_isprint();
 int	test_ft_strlen();
 int	test_ft_memset();
 int	test_ft_memcpy();
+int	test_ft_memmove();
 
 
 
@@ -22,5 +23,7 @@ int	main(void)
 	test_ft_strlen();
 	test_ft_memset();
 	test_ft_memcpy();
+	test_ft_memmove();
+	
 	return (0);
 }
