@@ -5,7 +5,7 @@
 int	tester_strlen(const char *str)
 {
 	int	expected = strlen(str);
-	int	result = strlen(str);
+	int	result = ft_strlen(str);
 
 	if(result != expected)
 	{
@@ -40,9 +40,9 @@ int	test_ft_strlen()
 	failures += tester_strlen(superlongstring);
 
 	if (failures == 0)
-		printf("ft_isprint: All tests passed.\n");
+		printf("ft_strlen: All tests passed.\n");
 	else
-		printf("ft_isprint: %d tests failed.\n", failures);
+		printf("ft_strlen: %d tests failed.\n", failures);
 
 	return (failures);
 }

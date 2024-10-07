@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stddef.h>
 
-int	tester_memcpy(void *restrict dst1, void *restrict dst2, void *restrict src, size_t n)
+int	tester_memcpy(void *dst1, void *dst2, void *src, size_t n)
 {
 	unsigned char *expected = (unsigned char *)memcpy(dst1, src, n);
 	unsigned char *result = (unsigned char *)ft_memcpy(dst2, src, n);
