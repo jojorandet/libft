@@ -29,8 +29,16 @@ int	test_ft_memset()
 	char	b2[100];
 
 	failures =  0;
+	ft_bzero(b1, sizeof(b1));
+	ft_bzero(b2, sizeof(b2));
 	failures += tester_memset(b1, b2, 'A', 5);
+
+	ft_bzero(b1, sizeof(b1));
+	ft_bzero(b2, sizeof(b2));
 	failures += tester_memset(b1, b2, 0, 20);
+
+	ft_bzero(b1, sizeof(b1));
+	ft_bzero(b2, sizeof(b2));
 	failures += tester_memset(b1, b2, 255, 15);
 
 	if(failures == 0)
