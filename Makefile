@@ -16,6 +16,7 @@ FUNCTIONS_NAMES = ft_isalpha.c \
 				ft_bzero.c \
 				ft_memcpy.c \
 				ft_memmove.c \
+				ft_strlcpy.c \
 
 OBJECT_FILES = $(FUNCTIONS_NAMES:.c=.o)
 
@@ -29,6 +30,7 @@ TEST_FUNCTIONS = test_ft_isalpha.c \
 				test_ft_bzero.c \
 				test_ft_memcpy.c \
 				test_ft_memmove.c \
+				test_ft_strlcpy.c \
 				main.c 
 TEST_FILES = $(addprefix $(TEST_DIR)/,$(TEST_FUNCTIONS))
 TEST_OBJECT_FILES = $(TEST_FILES:.c=.o)
@@ -49,7 +51,7 @@ clean:
 	rm -f $(OBJECT_FILES) $(TEST_OBJECT_FILES)
 
 fclean: clean 
-	rm -f $(NAME)
+	rm -f $(NAME) test_runner
 
 re: fclean all
 
