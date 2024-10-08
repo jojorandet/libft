@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 21:11:09 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/08 14:01:38 by jrandet          ###   ########.fr       */
+/*   Created: 2024/10/08 11:56:02 by jrandet           #+#    #+#             */
+/*   Updated: 2024/10/08 14:04:56 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char * src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
+	size_t	len_dst;
+	size_t	len_src;
+	size_t	remaining_buffer;
 	size_t	i;
-	size_t	src_len;
 
-	src_len = strlen(src);
-	if (dstsize == 0)
-		return (src_len);
-
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
 	i = 0;
-	while (i < (dstsize - 1) && src[i])
+
+	if (dstsize == 0)
+		return (len_src);
+
+	if (dstsize <= len_dst)
+		return (dstsize + len_src);
+
+	remaining_buffer = dstsize - len_dst - 1;
+	while (src[i] && i < remaining_buffer)
 	{
-		dst[i] = src[i];
+		dst[len_dst + i] = src[i];
 		i++;
 	}
-	if (dstsize > 0)
-		dst[i] = '\0';
-	return (src_len);
+	dst[len_dst + i] = '\0';
+	return (len_dst + len_src);
 }
-

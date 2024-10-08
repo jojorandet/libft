@@ -10,6 +10,7 @@ int	test_ft_memset();
 int	test_ft_memcpy();
 int	test_ft_memmove();
 int	test_ft_strlcpy();
+int	test_ft_strlcat();
 
 int	main(void)
 {
@@ -23,6 +24,7 @@ int	main(void)
 	test_ft_memcpy();
 	test_ft_memmove();
 	test_ft_strlcpy();
+	test_ft_strlcat();
 	
 	return (0);
 }
