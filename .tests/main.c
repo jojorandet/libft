@@ -11,6 +11,8 @@ int	test_ft_memcpy();
 int	test_ft_memmove();
 int	test_ft_strlcpy();
 int	test_ft_strlcat();
+int	test_ft_toupper();
+int	test_ft_tolower();
 
 int	main(void)
 {
@@ -25,6 +27,8 @@ int	main(void)
 	test_ft_memmove();
 	test_ft_strlcpy();
 	test_ft_strlcat();
+	test_ft_toupper();
+	test_ft_tolower();
 	
 	return (0);
 }
