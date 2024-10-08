@@ -16,7 +16,7 @@ int	tester_strlcat(char *dst1, char *dst2, const char * src, size_t dstsize)
 	return (0);
 }
 
-void	manual_copy(char *dst, const char *src)
+void	manual_copy_strlcat(char *dst, const char *src)
 {
 	size_t i = 0;
 	while (src[i])
@@ -38,43 +38,43 @@ int	test_ft_strlcat()
 	const char	src4[] = " @#!_~";
 
 	//normal case with a large enough buffer
-	manual_copy(dst1, "Hello");
-	manual_copy(dst2, "Hello");
+	manual_copy_strlcat(dst1, "Hello");
+	manual_copy_strlcat(dst2, "Hello");
 	failures += tester_strlcat(dst1, dst2, src1, 15);
 	
 	//case where the detsize is 0
-	manual_copy(dst1, "Hello");
-	manual_copy(dst2, "Hello");
+	manual_copy_strlcat(dst1, "Hello");
+	manual_copy_strlcat(dst2, "Hello");
 	failures += tester_strlcat(dst1, dst2, src1, 0);//no appending should occur, we just return the size of src 
 	
 	//ici on teste avec une string vide dest
-	manual_copy(dst1, "");
-	manual_copy(dst2, "");
+	manual_copy_strlcat(dst1, "");
+	manual_copy_strlcat(dst2, "");
 	failures += tester_strlcat(dst1, dst2, src1, 7);
 
 	//ici on teste avec une string vide src 2
-	manual_copy(dst1, "Hello");
-	manual_copy(dst2, "Hello");
+	manual_copy_strlcat(dst1, "Hello");
+	manual_copy_strlcat(dst2, "Hello");
 	failures += tester_strlcat(dst1, dst2, src2, 7);
 
 	//teste pour src tres long, cer qui veut dire que src va etre tronquee (treuncated)
-	manual_copy(dst1, "This");
-	manual_copy(dst2, "This");
+	manual_copy_strlcat(dst1, "This");
+	manual_copy_strlcat(dst2, "This");
 	failures += tester_strlcat(dst1, dst2, src3, 10);
 
 	//ici on teste avec une string dest qui est plus grande que le buffer de destination dstsize
-	manual_copy(dst1, "Hello");
-	manual_copy(dst2, "Hello");
+	manual_copy_strlcat(dst1, "Hello");
+	manual_copy_strlcat(dst2, "Hello");
 	failures += tester_strlcat(dst1, dst2, src1, 2);
 
 	//ici on teste avec une string dest qui est plus grande que le buffer de destination dstsize
-	manual_copy(dst1, "Hello");
-	manual_copy(dst2, "Hello");
+	manual_copy_strlcat(dst1, "Hello");
+	manual_copy_strlcat(dst2, "Hello");
 	failures += tester_strlcat(dst1, dst2, src1, 1);
 
 	// Case with special characters
-	manual_copy(dst1, "Hello");
-	manual_copy(dst2, "Hello");
+	manual_copy_strlcat(dst1, "Hello");
+	manual_copy_strlcat(dst2, "Hello");
 	failures += tester_strlcat(dst1, dst2, src4, 10);
 
 	if (failures == 0)

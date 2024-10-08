@@ -13,6 +13,7 @@ int	test_ft_strlcpy();
 int	test_ft_strlcat();
 int	test_ft_toupper();
 int	test_ft_tolower();
+int	test_ft_strchr();
 
 int	main(void)
 {
@@ -29,6 +30,7 @@ int	main(void)
 	test_ft_strlcat();
 	test_ft_toupper();
 	test_ft_tolower();
+	test_ft_strchr();
 	
 	return (0);
 }
