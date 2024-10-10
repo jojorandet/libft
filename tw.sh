@@ -1,7 +1,9 @@
+#!/bin/bash
+
 PAST_KEY=""
 while [[ true ]]
 do
-	CURRENT_KEY=$(find -L . -type f -name "*c" -exec md5 {} \;)
+	CURRENT_KEY=$(find -L . -type f -name "*c" -exec md5sum {} \;)
 	if [[ $PAST_KEY != $CURRENT_KEY ]]; then
 		PAST_KEY=$CURRENT_KEY
 

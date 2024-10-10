@@ -1,7 +1,11 @@
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
 #include <stddef.h>
+#ifdef linux
+#	include <bsd/string.h>
+#else
+#	include <string.h>
+#endif
 
 int	tester_strlcpy(char *dst1, char *dst2, const char * src, size_t dstsize)
 {

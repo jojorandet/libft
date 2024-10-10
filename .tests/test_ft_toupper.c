@@ -1,7 +1,6 @@
 #include "libft.h"
 #include <stdio.h>
 #include <ctype.h>
-#include <xlocale.h>
 
 int	tester_toupper(char c)
 {

@@ -53,7 +53,7 @@ $(NAME): $(OBJECT_FILES)
 	ar rcs $(NAME) $(OBJECT_FILES)
 
 test: $(NAME) $(TEST_OBJECT_FILES)
-	$(CC) $(CFLAGS) $(HEADER_DIR) -fsanitize=address -o test_runner $(TEST_OBJECT_FILES) -L. -lft
+	$(CC) $(CFLAGS) $(HEADER_DIR) -fsanitize=address -o test_runner $(TEST_OBJECT_FILES) -L. -lft -ldl -lbsd
 	./test_runner
 
 $(TEST_DIR)/%.o: $(TEST_DIR)/%.c

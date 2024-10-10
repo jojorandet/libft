@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 int test_ft_isalpha();
 int	test_ft_isdigit();
@@ -16,6 +17,13 @@ int	test_ft_tolower();
 int	test_ft_strchr();
 int	test_ft_strrchr();
 int test_ft_strncmp();
+
+void salut(int n)
+{
+	while(n--)
+		printf("salut %d\n", n);
+	printf("n = %d\n", n);
+}
 
 int	main(void)
 {
@@ -35,6 +43,10 @@ int	main(void)
 	test_ft_strchr();
 	test_ft_strrchr();
 	test_ft_strncmp();
+
+
+	salut(4);
+
 
 	return (0);
 }
