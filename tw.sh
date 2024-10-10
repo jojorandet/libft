@@ -10,14 +10,10 @@ do
 		echo "\nTest watcher done at $(date)"
 
 		norminette
-
+		
 		echo "\n\n\n"
 
-		rm -f a.out
-
-		gcc -fsanitize=address -Wall -Werror -Wextra ./.tests/main.c
-
-		./a.out
+		make test
 	fi
 	sleep 0.1
 done
