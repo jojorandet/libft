@@ -7,16 +7,10 @@ int	tester_isalpha(char c)
 	int expected = isalpha(c);
 	int result = ft_isalpha(c);
 	if (result == expected)
-	{
-		printf("Both functions return 0s, test passed. Given char is NOT alpha\n");
-		return(0);
-	}
+		return (0); // in both cases it will return 0 because they both render two trues, or two falses, meaning the tests passed. It should not render 1 because it woudl count as a failre
 	if (result && expected)     // if (result != 0 && expected != 0) the same!
-	{
-		printf("Both functions return true, test passed. Given char IS alpha\n");
-		return(0);
-	}
-	printf("ft_isalpha failed for argument: '%c' | Expected: %d | Result: %d\n", c, expected, result);
+		return (0);
+	printf("Mismatch between functions: 'isapha' returned %d, 'ft_isalpha' returned %d.\n", expected, result);
 	return (1);
 }
 

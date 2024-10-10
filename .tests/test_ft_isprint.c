@@ -6,13 +6,13 @@ int	tester_isprint(char c)
 {
 	int expected = isprint(c);
 	int result = ft_isprint(c);
+	if (result == expected)
+		return (0); // in both cases it will return 0 because they both render two trues, or two falses, meaning the tests passed. It should not render 1 because it woudl count as a failre
+	if (result && expected)     // if (result != 0 && expected != 0) the same!
 
-	if (result != expected)
-	{
-		printf("ft_isprint failed for argument: '%c' | Expected: %d | Result: %d\n", c, expected, result);
-		return (1);
-	}
-	return (0);
+		return(0);
+	printf("Mismatch between functions: 'isprint' returned %d, 'ft_isprint' returned %d.\n", expected, result);
+	return (1);
 }
 
 int	test_ft_isprint()

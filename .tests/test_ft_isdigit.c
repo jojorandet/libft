@@ -4,15 +4,14 @@
 
 int	tester_isdigit(char c)
 {
-	int expected = isdigit(c);
+	int expected = isdigit((unsigned char)c);
 	int result = ft_isdigit(c);
-
-	if (result != expected)
-	{
-		printf("ft_isdigit failed for argument: '%c' | Expected: %d | Result: %d\n", c, expected, result);
-		return (1);
-	}
-	return (0);
+	if (result == expected)
+		return (0); // in both cases it will return 0 because they both render two trues, or two falses, meaning the tests passed. It should not render 1 because it woudl count as a failre
+	if (result && expected)     // if (result != 0 && expected != 0) the same!
+		return(0);
+	printf("Mismatch between functions: 'isdigit' returned %d, 'ft_isdigit' returned %d.\n", expected, result);
+	return (1);
 }
 
 int	test_ft_isdigit()

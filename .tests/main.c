@@ -17,13 +17,7 @@ int	test_ft_tolower();
 int	test_ft_strchr();
 int	test_ft_strrchr();
 int test_ft_strncmp();
-
-void salut(int n)
-{
-	while(n--)
-		printf("salut %d\n", n);
-	printf("n = %d\n", n);
-}
+int test_memchr();
 
 int	main(void)
 {
@@ -43,10 +37,7 @@ int	main(void)
 	test_ft_strchr();
 	test_ft_strrchr();
 	test_ft_strncmp();
-
-
-	salut(4);
-
+	test_memchr();
 
 	return (0);
 }

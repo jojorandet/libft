@@ -6,13 +6,12 @@ int	tester_isascii(char c)
 {
 	int	expected = isascii(c);
 	int	result = ft_isascii(c);
-
-	if (result != expected)
-	{
-		printf("ft_isascii failed for argument: '%c' | Expected: %d | Result: %d\n", c, expected, result);
-		return (1);
-	}
-	return (0);
+	if (expected == result)
+		return (0);
+	if (expected && result)
+		return (0);
+	printf("ft_isascii failed for argument: '%c' | Expected: %d | Result: %d\n", c, expected, result);
+	return (1);
 }
 
 int	test_ft_isascii()
