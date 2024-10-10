@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 17:58:10 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/09 18:53:58 by jrandet          ###   ########.fr       */
+/*   Created: 2024/10/09 10:47:59 by jrandet           #+#    #+#             */
+/*   Updated: 2024/10/10 12:35:51 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char * s, int c)
+int	ft_strncmp(const char * s1, const char * s2, size_t n)
 {
-	char	*iterator;
+	size_t	i;
 
-	iterator = (char *)s;
-	while (*iterator)
-		iterator++;
-	while(iterator >= s)
-	{
-		if (*iterator == (char)c)
-			return ((char *)iterator);
-		iterator--;
-	}
-	return (NULL); //returns null if there is no character in the function
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (s1[i] && s2[i] && (s1[i] == s2[i]) && (i < n - 1))
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

@@ -21,6 +21,8 @@ FUNCTIONS_NAMES = ft_isalpha.c \
 				ft_toupper.c \
 				ft_tolower.c \
 				ft_strchr.c \
+				ft_strrchr.c \
+				ft_strncmp.c \
 
 OBJECT_FILES = $(FUNCTIONS_NAMES:.c=.o)
 
@@ -39,6 +41,8 @@ TEST_FUNCTIONS = test_ft_isalpha.c \
 				test_ft_toupper.c \
 				test_ft_tolower.c \
 				test_ft_strchr.c \
+				test_ft_strrchr.c \
+				test_ft_strncmp.c \
 				main.c 
 TEST_FILES = $(addprefix $(TEST_DIR)/,$(TEST_FUNCTIONS))
 TEST_OBJECT_FILES = $(TEST_FILES:.c=.o)
