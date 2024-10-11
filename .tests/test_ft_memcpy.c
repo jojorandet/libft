@@ -32,7 +32,7 @@ int	test_ft_memcpy()
 	failures =  0;
 	ft_bzero(dst1, sizeof(dst1));
 	ft_bzero(dst2, sizeof(dst2));
-	failures += tester_memcpy((void *)dst1, (void *)dst2, (void *)src, 5);
+	failures += tester_memcpy((void *)dst1, (void *)dst2, (void *)src, 5); //need to cast because it is what is asked above
 
 	ft_bzero(dst1, sizeof(dst1));
 	ft_bzero(dst2, sizeof(dst2));

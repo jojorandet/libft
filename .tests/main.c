@@ -18,6 +18,7 @@ int	test_ft_strchr();
 int	test_ft_strrchr();
 int test_ft_strncmp();
 int test_memchr();
+int test_ft_memcmp();
 
 int	main(void)
 {
@@ -38,6 +39,7 @@ int	main(void)
 	test_ft_strrchr();
 	test_ft_strncmp();
 	test_memchr();
-
+	test_ft_memcmp();
+	
 	return (0);
 }

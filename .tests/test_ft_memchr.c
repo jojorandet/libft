@@ -8,7 +8,7 @@ int	tester_memchr(const void *s1, int c, size_t n)
 	unsigned char	*result = (unsigned char *)ft_memchr(s1, (char)c, n);
 
 	if ((expected == NULL && result != NULL) || (expected != NULL && result == NULL) || 
-		(expected != NULL && result != NULL && strcmp(expected, result) != 0))
+		(expected != NULL && result != NULL && strcmp((const char *)expected, (const char*)result) != 0))
 	{
 		printf("ft_memchr failed for input string \"%s\" and character '%c' to search | ", s1, (char)c);
 

@@ -3,7 +3,7 @@
 PAST_KEY=""
 while [[ true ]]
 do
-	CURRENT_KEY=$(find -L . -type f -name "*c" -exec md5sum {} \;)
+CURRENT_KEY=$(find -L . -type f -name "*.[ch]" -exec md5 {} \;)
 	if [[ $PAST_KEY != $CURRENT_KEY ]]; then
 		PAST_KEY=$CURRENT_KEY
 

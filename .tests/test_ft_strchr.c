@@ -4,8 +4,8 @@
 
 int tester_strchr(const char *s1, const char *s2, int c)
 {
-	char *expected = strchr((char *)s1, (char)c);
-	char *result = ft_strchr((char *)s2, (char)c);
+	char *expected = strchr(s1, (char)c);
+	char *result = ft_strchr(s2, (char)c);
 
 	if ((expected == NULL && result != NULL) || (expected != NULL && result == NULL) || 
 		(expected != NULL && result != NULL && strcmp(expected, result) != 0))

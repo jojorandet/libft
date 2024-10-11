@@ -5,7 +5,7 @@ NAME = libft.a
 
 TEST_DIR = ./.tests
 HEADER_DIR = -I .
-FOR_FSANITIZE = fsanitize=address -g3
+# FOR_FSANITIZE = fsanitize=address -g3
 # FOR_VALGRIND = -g
 
 FUNCTIONS_NAMES = ft_isalpha.c \
@@ -26,6 +26,7 @@ FUNCTIONS_NAMES = ft_isalpha.c \
 				ft_strrchr.c \
 				ft_strncmp.c \
 				ft_memchr.c \
+				ft_memcmp.c \
 
 OBJECT_FILES = $(FUNCTIONS_NAMES:.c=.o)
 
@@ -47,6 +48,7 @@ TEST_FUNCTIONS = test_ft_isalpha.c \
 				test_ft_strrchr.c \
 				test_ft_strncmp.c \
 				test_ft_memchr.c \
+				test_ft_memcmp.c \
 				main.c 
 TEST_FILES = $(addprefix $(TEST_DIR)/,$(TEST_FUNCTIONS))
 TEST_OBJECT_FILES = $(TEST_FILES:.c=.o)
@@ -57,7 +59,7 @@ $(NAME): $(OBJECT_FILES)
 	ar rcs $(NAME) $(OBJECT_FILES)
 
 test: $(NAME) $(TEST_OBJECT_FILES)
-	$(CC) $(CFLAGS) $(HEADER_DIR) $(FOR_FSANITIZE) $(FOR_VALGRIND) -o test_runner $(TEST_OBJECT_FILES) -L. -lft -ldl -lbsd
+	$(CC) $(CFLAGS) $(HEADER_DIR) $(FOR_FSANITIZE) $(FOR_VALGRIND) -o test_runner $(TEST_OBJECT_FILES) -L. -lft
 	./test_runner
 
 $(TEST_DIR)/%.o: $(TEST_DIR)/%.c
