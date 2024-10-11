@@ -6,13 +6,13 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 19:40:54 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/11 14:16:41 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/11 14:58:11 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_backward_copy(unsigned char *dest, unsigned char *src, size_t len)
+static void	ft_backward_copy(unsigned char *dest, unsigned char *src, size_t len)
 {
 	size_t	i;
 
