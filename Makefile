@@ -28,6 +28,7 @@ FUNCTIONS_NAMES = ft_isalpha.c \
 				ft_memchr.c \
 				ft_memcmp.c \
 				ft_strnstr.c \
+				ft_atoi.c \
 
 OBJECT_FILES = $(FUNCTIONS_NAMES:.c=.o)
 
