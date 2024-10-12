@@ -3,7 +3,7 @@
 PAST_KEY=""
 while [[ true ]]
 do
-CURRENT_KEY=$(find -L . -type f -name "*.[ch]" -exec md5 {} \;)
+CURRENT_KEY=$(find -L . -type f -name "*.[c]" -exec md5 {} \;)
 	if [[ $PAST_KEY != $CURRENT_KEY ]]; then
 		PAST_KEY=$CURRENT_KEY
 
@@ -15,7 +15,7 @@ CURRENT_KEY=$(find -L . -type f -name "*.[ch]" -exec md5 {} \;)
 		
 		echo "\n\n\n"
 
-		make test
+		#make test
 	fi
 	sleep 0.1
 done

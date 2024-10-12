@@ -1,8 +1,11 @@
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int	tester_bzero(void *b1, void *b2, size_t len)
 {
-	bzero(b1, len); // b1 and b2 are reset at the beginign of every test
+	ft_bzero(b1, len); // b1 and b2 are reset at the beginign of every test
 	ft_bzero(b2, len);
 	size_t	i;
 

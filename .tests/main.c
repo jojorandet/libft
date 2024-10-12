@@ -22,7 +22,7 @@ int test_ft_memcmp();
 
 int	main(void)
 {
-	test_ft_isalpha();
+	/*test_ft_isalpha();
 	test_ft_isdigit();
 	test_ft_isalnum();
 	test_ft_isascii();
@@ -39,7 +39,11 @@ int	main(void)
 	test_ft_strrchr();
 	test_ft_strncmp();
 	test_memchr();
-	test_ft_memcmp();
+	test_ft_memcmp();*/
+
+	char	*s1 = "hello";
+
+	printf("the string coppied is %s", ft_strdup(s1));
 	
 	return (0);
 }

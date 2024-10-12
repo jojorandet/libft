@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 10:50:43 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/11 13:55:44 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/12 11:21:55 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (str1[i] != str2[i])
-			return(str1[i] - str2[i]);
+			return (str1[i] - str2[i]);
 		i++;
 	}
 	return (0);

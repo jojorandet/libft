@@ -6,13 +6,13 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 19:40:54 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/11 14:58:11 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/12 11:22:34 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_backward_copy(unsigned char *dest, unsigned char *src, size_t len)
+static void	ft_back_copy(unsigned char *dest, unsigned char *src, size_t len)
 {
 	size_t	i;
 
@@ -36,6 +36,6 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	if (dest1 < src1)
 		ft_memcpy(dest1, src1, len);
 	else
-		ft_backward_copy(dest1, src1, len);
+		ft_back_copy(dest1, src1, len);
 	return (dest);
 }

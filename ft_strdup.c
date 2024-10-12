@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 16:34:56 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/12 11:20:30 by jrandet          ###   ########.fr       */
+/*   Created: 2024/10/12 12:17:08 by jrandet           #+#    #+#             */
+/*   Updated: 2024/10/12 13:09:23 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strdup(const char *s1)
 {
-	int	result;
-	int	countsign;
+	char	*pointer;
+	char	*cursor;
+	size_t	len;
 
-	countsign = 1;
-	result = 0;
-	while (*str && ((9 <= *str && *str <= 13) || *str == ' '))
-		str++;
-	if (*str == '-')
-		countsign = -countsign;
-	if (*str == '-' || *str == '+')
-		str++;
-	while ('0' <= *str && *str <= '9')
+	if (*s1 == '\0')
+		return (ft_calloc(1, 1));
+	len = ft_strlen(s1);
+	pointer = (char *)malloc(len * sizeof(char) + 1);
+	if (!pointer)
+		return (NULL);
+	cursor = pointer;
+	while (*s1)
 	{
-		result = result * 10 + (*str - 48);
-		str++;
+		*cursor = *s1;
+		cursor++;
+		s1++;
 	}
-	if (countsign == -1)
-		return (countsign * result);
-	return (result);
+	*cursor = '\0';
+	return (pointer);
 }
