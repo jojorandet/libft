@@ -3,39 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 19:40:54 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/12 11:22:34 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/14 15:07:20 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_back_copy(unsigned char *dest, unsigned char *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	char	*_dst;
+	char	*_src;
 
-	i = len;
-	while (i > 0)
+	if (!dst && !src)
+		return (0);
+	_src = (char *)src;
+	_dst = (char *)dst;
+	if (_dst < _src)
 	{
-		i--;
-		dest[i] = src[i];
+		while (n--)
+			*(_dst++) = *(_src++);
 	}
-}
-
-void	*ft_memmove(void *dest, const void *src, size_t len)
-{
-	unsigned char	*dest1;
-	unsigned char	*src1;
-
-	dest1 = (unsigned char *)dest;
-	src1 = (unsigned char *)src;
-	if (dest1 == src1 || len == 0)
-		return (dest);
-	if (dest1 < src1)
-		ft_memcpy(dest1, src1, len);
-	else
-		ft_back_copy(dest1, src1, len);
-	return (dest);
+	else if (_dst > _src)
+	{
+		_src += n;
+		_dst += n;
+		while (n--)
+			*(--_dst) = *(--_src);
+	}
+	return (dst);
 }
