@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:11:08 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/15 19:26:12 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/15 20:51:32 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static char	*ft_strcut(char *start, char *end)
 	size_t	len;
 	
 	len = end - start;
+	if (len <= 0)
+		return (ft_calloc(1, 1));
 	str_n = malloc(len + 1);
 	if (!str_n)
 		return (NULL);
@@ -61,24 +63,26 @@ static void	build_array(char **array, char const *s, char c)
 		start = end;
 		while (*end && *end != c)
 			end++;
-		array[i_array++] = ft_strcut(start, end);
+		if (start != end)
+			array[i_array++] = ft_strcut(start, end);
 	}
+	array[i_array] = NULL;
 }
-
 
 char	**ft_split(char const *s, char c)
 {
-
 	char	**array;
 	size_t	size_array;
 	
 	size_array = 0;
-	if (!*s)
-		return (0);
+	if (!*s || !s)
+		return (ft_calloc(1, sizeof(char *)));
 	size_array = get_size_array(s, c);
+	if (size_array == 0)
+		return (ft_calloc(1, sizeof(char *)));
 	array = ft_calloc(size_array + 1, sizeof(*array));
 	if (!array)
-		return (0);
+		return (NULL);
 	build_array(array, s, c);
 	return (array);
 }

@@ -22,8 +22,8 @@ void print_arr(char **arr)
 
 int	main()
 {
-	const char	s1[] = "Hello my name is Josephine Hello";
-	char c = ' ';
+	const char	s1[] = "\0aa\0bbb";
+	char c = '\0';
 	char **result = ft_split(s1, c);
 
 	print_arr(result);
