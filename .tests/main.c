@@ -42,9 +42,12 @@ int	main(void)
 	test_ft_memcmp();*/
 
 	char const	*s1 = "Hello my name is Josephine Hello";
+	char const	*s2 = "";
+
 	char const	*set = "Hello ";
 
-	printf("%s", ft_strtrim(s1, set));
+	printf("%s\n", ft_strtrim(s1, set));
+	printf("%s\n", ft_strtrim(s2, set));
 
 	return (0);
 }
