@@ -15,7 +15,7 @@ int	tester_isprint(char c)
 	return (1);
 }
 
-int	test_ft_isprint()
+int	main()
 {
 	int failures = 0;
 	

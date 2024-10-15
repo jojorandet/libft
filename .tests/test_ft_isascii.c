@@ -14,7 +14,7 @@ int	tester_isascii(char c)
 	return (1);
 }
 
-int	test_ft_isascii()
+int	main()
 {
 	int failures = 0;
 	

@@ -15,7 +15,7 @@ int	tester_tolower(char c)
 	return (0);
 }
 
-int	test_ft_tolower()
+int	main()
 {
 	int	failures = 0;
 

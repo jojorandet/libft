@@ -22,7 +22,7 @@ int	tester_memset(void *b1, void *b2, int c, size_t len)
 	return (0);	
 }
 
-int	test_ft_memset()
+int	main()
 {
 	int		failures;
 	char	b1[100];

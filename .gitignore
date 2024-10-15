@@ -2,3 +2,4 @@
 *.out
 libft.a
 test_runner
+*.dSYM

@@ -32,7 +32,7 @@ void	manual_copy_strlcat(char *dst, const char *src)
 	dst[i] = '\0';
 }
 
-int	test_ft_strlcat()
+int	main()
 {
 	int	failures = 0;
 	char		dst1[50]; //classical test with dest1, test with the normal dstize >= dstlen

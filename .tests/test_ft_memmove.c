@@ -37,7 +37,7 @@ void	reinitialize_src2(char *src2)
 	src2[9] = '\0';
 }
 
-int	test_ft_memmove()
+int	main()
 {
 	int		failures;
 	char	dest1[100];

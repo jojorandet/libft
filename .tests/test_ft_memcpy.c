@@ -22,7 +22,7 @@ int	tester_memcpy(void *dst1, void *dst2, void *src, size_t n)
 	return (0);	
 }
 
-int	test_ft_memcpy()
+int	main()
 {
 	int		failures;
 	char	dst1[100];

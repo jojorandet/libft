@@ -38,7 +38,7 @@ void	manual_copy_strchr(char *dst, const char *src)
 	dst[i] = '\0';
 }
 
-int	test_ft_strchr()
+int	main()
 {
 	int	failures = 0;
 	char	s1[50];

@@ -20,7 +20,7 @@ int	tester_strlcpy(char *dst1, char *dst2, const char * src, size_t dstsize)
 	return (0);
 }
 
-int	test_ft_strlcpy()
+int	main()
 {
 	int	failures = 0;
 	char		dst1[100];

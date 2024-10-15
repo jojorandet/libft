@@ -15,7 +15,7 @@ int	tester_toupper(char c)
 	return (0);
 }
 
-int	test_ft_toupper()
+int	main()
 {
 	int	failures = 0;
 

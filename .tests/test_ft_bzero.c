@@ -22,7 +22,7 @@ int	tester_bzero(void *b1, void *b2, size_t len)
 	return (0);	
 }
 
-int	test_ft_bzero()
+int	main()
 {
 	int		failures;
 	char	b1[100];

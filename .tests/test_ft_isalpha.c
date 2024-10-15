@@ -14,7 +14,7 @@ int	tester_isalpha(char c)
 	return (1);
 }
 
-int test_ft_isalpha()
+int main()
 {
 	int failures = 0;
 

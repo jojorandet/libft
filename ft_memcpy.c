@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 23:37:02 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/08 18:52:31 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/15 18:24:50 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-/*int main()
-{
-	char	dst[100];
-	char	src[] = "hallo";
-
-	printf("%s", ft_memcpy((void *)dst, (void *)src, 5));
-	return (0);
-}*/

@@ -14,7 +14,7 @@ int	tester_isdigit(char c)
 	return (1);
 }
 
-int	test_ft_isdigit()
+int	main()
 {
 	int failures = 0;
 	

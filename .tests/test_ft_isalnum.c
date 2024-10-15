@@ -14,7 +14,7 @@ int	tester_isalnum(char c)
 	return (1);
 }
 
-int	test_ft_isalnum()
+int	main()
 {
 	int	failures = 0;
 

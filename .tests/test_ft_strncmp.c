@@ -17,7 +17,7 @@ int tester_strncmp(const char * s1, const char * s2, size_t n)
 	return (1);
 }
 
-int test_ft_strncmp()
+int main()
 {
 	int	failures = 0;
 	char	s1[50];

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvoisard <jonas.voisard@gmail.com>         +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 19:05:54 by jvoisard          #+#    #+#             */
-/*   Updated: 2024/10/14 20:41:18 by jvoisard         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:28:03 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_strncpy(char *dst, char *src, size_t n)
 {
@@ -23,20 +23,3 @@ void	ft_strncpy(char *dst, char *src, size_t n)
 		*cursor++ = *src++;
 	*cursor = '\0';
 }
-
-/*int main()
-{
-	char	*src1 = "Le temps est bon";
-	char	*src2 = "short";
-	char	*src3 = "";
-	
-	
-	char	dest1[50];
-	char	dest2[50];
-	char	dest3[50];
-
-	ft_strncpy(dest1, src1, 9);
-	printf("%s", dest1);
-
-	return (0);
-}*/

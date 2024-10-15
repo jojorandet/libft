@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 14:22:05 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/12 13:01:33 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/15 18:24:45 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_strncmp_len(const char *h, const char *n, size_t len)
 {
@@ -41,13 +40,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-
-/*int main()
-{
-	char	*haystack = "Jo Hell Hello you";
-	char	*needle = "Hello";
-
-	printf("the needle %s found in haystack %s is %s", needle, haystack, ft_strnstr(haystack, needle, 15));
-	return (0);
-}*/

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 	
-tester_ft_trim()
+int main()
 {
 	char const	*s1 = "Hello my name is Josephine Hello"
 

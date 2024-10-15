@@ -27,7 +27,7 @@ int	tester_memchr(const void *s1, int c, size_t n)
 	return (0);
 }
 
-int test_memchr()
+int main()
 {
     int failures = 0;
     char s1[50];

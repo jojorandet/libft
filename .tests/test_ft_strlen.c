@@ -15,7 +15,7 @@ int	tester_strlen(const char *str)
 	return (0);
 }
 
-int	test_ft_strlen()
+int	main()
 {
 	int	failures = 0;
 

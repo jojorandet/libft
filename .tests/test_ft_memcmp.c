@@ -17,7 +17,7 @@ int tester_memcmp(const void *s1, const void *s2, size_t n)
 	return (1);
 }
 
-int test_ft_memcmp()
+int main()
 {
 	int	failures = 0;
 	unsigned char	s1[50];

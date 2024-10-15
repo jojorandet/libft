@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 22:18:05 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/05 19:52:32 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/15 18:24:31 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,3 @@ void	ft_bzero(void *s, size_t n)
 	while (++i < n)
 		testpointer[i] = 0;
 }
-
-/*int	main()
-{
-	char	str[] = "abcdefghij";
-	
-	ft_bzero(str, 5);
-	printf("%s\n", str);
-
-	return (0);
-}*/
