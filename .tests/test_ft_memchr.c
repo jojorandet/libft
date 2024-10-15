@@ -10,7 +10,7 @@ int	tester_memchr(const void *s1, int c, size_t n)
 	if ((expected == NULL && result != NULL) || (expected != NULL && result == NULL) || 
 		(expected != NULL && result != NULL && strcmp((const char *)expected, (const char*)result) != 0))
 	{
-		printf("ft_memchr failed for input string \"%s\" and character '%c' to search | ", s1, (char)c);
+		printf("ft_memchr failed for input string \"%s\" and character '%c' to search | ", (const char *)s1, (char)c);
 
 		if (expected == NULL)
 			printf("expected: (NULL) | ");
