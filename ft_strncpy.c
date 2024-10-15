@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_caloc.c                                         :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvoisard <jonas.voisard@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/12 10:39:34 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/14 16:53:12 by jvoisard         ###   ########.fr       */
+/*   Created: 2024/10/14 19:05:54 by jvoisard          #+#    #+#             */
+/*   Updated: 2024/10/14 20:41:18 by jvoisard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include <stdio.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_strncpy(char *dst, char *src, size_t n)
 {
-	void	*pointer;
-	size_t	memory_needed;
+	char	*cursor;
 
-	memory_needed = count * size;
-	pointer = malloc(memory_needed);
-	if (!pointer)
-		return (NULL);
-	ft_bzero(pointer, memory_needed);
-	return (pointer);
+	if (!dst || !src)
+		return;
+	cursor = dst;
+	while (*src && n--)
+		*cursor++ = *src++;
+	*cursor = '\0';
 }
+
+/*int main()
+{
+	char	*src1 = "Le temps est bon";
+	char	*src2 = "short";
+	char	*src3 = "";
+	
+	
+	char	dest1[50];
+	char	dest2[50];
+	char	dest3[50];
+
+	ft_strncpy(dest1, src1, 9);
+	printf("%s", dest1);
+
+	return (0);
+}*/

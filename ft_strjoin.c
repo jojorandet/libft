@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_caloc.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvoisard <jonas.voisard@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/12 10:39:34 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/14 16:53:12 by jvoisard         ###   ########.fr       */
+/*   Created: 2024/10/14 15:54:10 by jvoisard          #+#    #+#             */
+/*   Updated: 2024/10/14 17:31:14 by jvoisard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_concat(char *dst, char const *s1, char const *s2)
 {
-	void	*pointer;
-	size_t	memory_needed;
+	while (*s1)
+		*dst++ = *s1++;
+	while (*s2)
+		*dst++ = *s2++;
+	*dst = '\0';
+}
 
-	memory_needed = count * size;
-	pointer = malloc(memory_needed);
-	if (!pointer)
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int	total_len;
+	char	*result;
+
+	if (!s1 || !s2)
 		return (NULL);
-	ft_bzero(pointer, memory_needed);
-	return (pointer);
+	total_len = ft_strlen(s1) + ft_strlen(s2);
+	result = (char *)malloc(sizeof(char) * (total_len + 1));
+	if (!result)
+		return (NULL);
+	ft_concat(result, s1, s2);
+	return (result);
 }

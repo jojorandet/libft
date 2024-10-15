@@ -41,9 +41,11 @@ int	main(void)
 	test_memchr();
 	test_ft_memcmp();*/
 
-	char	*s1 = "hello";
+	char const	*s1 = "Hello my name is Josephine Hello";
+	char const	*set = "Hello ";
 
-	printf("the string coppied is %s", ft_strdup(s1));
-	
+	printf("%s", ft_strtrim(s1, set));
+
 	return (0);
+}
 }

@@ -29,8 +29,11 @@ FUNCTIONS_NAMES = ft_isalpha.c \
 				ft_memcmp.c \
 				ft_strnstr.c \
 				ft_atoi.c \
-				ft_caloc.c \
+				ft_calloc.c \
 				ft_strdup.c \
+				ft_substr.c \
+				ft_strjoin.c \
+				ft_strncpy.c \
 
 OBJECT_FILES = $(FUNCTIONS_NAMES:.c=.o)
 
