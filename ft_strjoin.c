@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvoisard <jonas.voisard@gmail.com>         +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:54:10 by jvoisard          #+#    #+#             */
-/*   Updated: 2024/10/14 17:31:14 by jvoisard         ###   ########.fr       */
+/*   Updated: 2024/10/15 21:31:19 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_concat(char *dst, char const *s1, char const *s2)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	total_len;
+	int		total_len;
 	char	*result;
 
 	if (!s1 || !s2)

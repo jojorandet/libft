@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvoisard <jonas.voisard@gmail.com>         +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:04:32 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/14 15:48:51 by jvoisard         ###   ########.fr       */
+/*   Updated: 2024/10/15 21:34:47 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ char	*ft_strcpy(char *dest, const char *src, size_t len)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char    *substr;
-	size_t  strlen;
+	char	*substr;
+	size_t	strlen;
 
 	if (!s)
-		return (NULL);  
+		return (NULL);
 	strlen = ft_strlen(s);
 	if (start >= strlen)
 		return (ft_calloc(1, 1));

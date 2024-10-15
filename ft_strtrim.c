@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:34:02 by jvoisard          #+#    #+#             */
-/*   Updated: 2024/10/15 12:06:57 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/15 21:36:04 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 
 	if (s1[0] == '\0')
-		return ft_calloc(1,1);
+		return (ft_calloc(1, 1));
 	while (*s1 && (is_in_charset(*s1, set)))
 		s1++;
 	start = (char *)s1;
@@ -38,11 +38,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		s1--;
 	len = s1 - start + 1;
 	if (len <= 0)
-		return ft_calloc(1,1);
+		return (ft_calloc(1, 1));
 	trimmed = malloc(len + 1);
 	if (!trimmed)
 		return (NULL);
 	ft_strncpy(trimmed, start, len);
 	trimmed[len] = '\0';
-	return trimmed;
+	return (trimmed);
 }

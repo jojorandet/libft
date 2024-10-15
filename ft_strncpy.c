@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 19:05:54 by jvoisard          #+#    #+#             */
-/*   Updated: 2024/10/15 18:28:03 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/15 21:36:27 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_strncpy(char *dst, char *src, size_t n)
 	char	*cursor;
 
 	if (!dst || !src)
-		return;
+		return ;
 	cursor = dst;
 	while (*src && n--)
 		*cursor++ = *src++;
