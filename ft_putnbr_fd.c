@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 19:07:05 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/16 20:36:56 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/17 16:17:54 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
-	
+
 	if (n == 0)
 	{
 		write(fd, "0", 1);
@@ -28,7 +28,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		write(fd,"-", 1);
+		write (fd, "-", 1);
 		n = -n;
 	}
 	if (n >= 10)
