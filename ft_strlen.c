@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 13:20:27 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/05 19:47:12 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/18 13:58:45 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	i;
+	const char	*start;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	start = str;
+	while (*str)
+		str++;
+	return (str - start);
 }

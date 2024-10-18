@@ -6,26 +6,11 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:04:32 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/18 11:41:46 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/18 13:01:48 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*ft_strcpy(char *dest, const char *src, size_t len)
-{
-	char	*dest_start;
-
-	dest_start = dest;
-	while (*src && len--)
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (dest_start);
-}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -42,9 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
-	while (*s && start--)
-		s++;
-	ft_strcpy(substr, s, len);
-	substr[len] = '\0';
+	s += start;
+	ft_strlcpy(substr, s, len + 1);
 	return (substr);
 }

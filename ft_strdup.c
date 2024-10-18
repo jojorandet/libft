@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 12:17:08 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/15 15:20:12 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/18 13:15:38 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*pointer;
-	char	*cursor;
 	size_t	len;
 
 	if (*s1 == '\0')
@@ -24,13 +23,6 @@ char	*ft_strdup(const char *s1)
 	pointer = (char *)malloc(len * sizeof(char) + 1);
 	if (!pointer)
 		return (NULL);
-	cursor = pointer;
-	while (*s1)
-	{
-		*cursor = *s1;
-		cursor++;
-		s1++;
-	}
-	*cursor = '\0';
+	ft_memcpy(pointer, s1, len + 1);
 	return (pointer);
 }

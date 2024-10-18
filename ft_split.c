@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:11:08 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/15 21:49:42 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/18 13:02:05 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,6 @@ static size_t	get_size_array(char const *str, char c)
 			str++;
 	}
 	return (count);
-}
-
-static char	*ft_strcut(char *start, char *end)
-{
-	char	*str_n;
-	char	*cursor;
-	size_t	len;
-
-	len = end - start;
-	if (len <= 0)
-		return (NULL);
-	str_n = malloc(len + 1);
-	if (!str_n)
-		return (NULL);
-	cursor = str_n;
-	while (start < end)
-		*cursor++ = *start++;
-	*cursor = '\0';
-	return (str_n);
 }
 
 static int	clean_array(char **array)
@@ -75,7 +56,7 @@ static int	fill_array(char **array, char *start, char c)
 			end++;
 		if (start != end)
 		{
-			item = ft_strcut(start, end);
+			item = ft_substr(start, 0, end - start);
 			if (!item)
 				return (clean_array(array));
 			array[i_array++] = item;
