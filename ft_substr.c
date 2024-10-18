@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:04:32 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/15 21:34:47 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/18 11:41:46 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src, size_t len)
+static char	*ft_strcpy(char *dest, const char *src, size_t len)
 {
 	char	*dest_start;
 

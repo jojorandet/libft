@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 17:34:02 by jvoisard          #+#    #+#             */
-/*   Updated: 2024/10/15 21:36:04 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/18 11:41:04 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_in_charset(char c, char const *set)
+static int	is_in_charset(char c, char const *set)
 {
 	while (*set)
 		if (c == *set++)

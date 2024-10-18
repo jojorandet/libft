@@ -1,7 +1,0 @@
-*.o
-*.out
-libft.a
-test_runner
-*.dSYM
-.tests/
-tw.sh
