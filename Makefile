@@ -1,6 +1,8 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
+
+#mandatory files
 SOURCE_FILES = ft_isalpha.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
@@ -38,22 +40,30 @@ SOURCE_FILES = ft_isalpha.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
 
+#bonus part 
+SOURCE_FILES_BONUS = ft_lstnew_bonus.c \
+
 OBJECT_FILES = $(SOURCE_FILES:.c=.o)
+OBJECT_FILES_BONUS = $(SOURCE_FILES_BONUS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECT_FILES)
 	ar rcs $(NAME) $(OBJECT_FILES)
 
+#make bonus will be called to compile both the mandatory and the bonus files
+bonus: $(OBJECT_FILES) $(OBJECT_FILES_BONUS)
+	ar rcs $(NAME) $(OBJECT_FILES) $(OBJECT_FILES_BONUS)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -I . -c $^ -o $@
 
 clean:
-	rm -f $(OBJECT_FILES)
+	rm -f $(OBJECT_FILES) $(OBJECT_FILES_BONUS)
 
 fclean: clean 
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
