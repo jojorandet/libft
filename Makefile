@@ -42,6 +42,8 @@ SOURCE_FILES = ft_isalpha.c \
 
 #bonus part 
 SOURCE_FILES_BONUS = ft_lstnew_bonus.c \
+					ft_lstadd_front.c \
+					
 
 OBJECT_FILES = $(SOURCE_FILES:.c=.o)
 OBJECT_FILES_BONUS = $(SOURCE_FILES_BONUS:.c=.o)
