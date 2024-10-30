@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 19:02:41 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/29 12:15:01 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/30 13:59:30 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void		ft_putnbr_fd(int n, int fd);
 t_list		*ft_lstnew(void *content);
 void 		ft_lstadd_front(t_list **lst, t_list *new);
 int 		ft_lstsize(t_list *lst);
+void 		ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
