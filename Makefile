@@ -46,6 +46,7 @@ SOURCE_FILES_BONUS = ft_lstnew.c \
 					ft_lstadd_front.c \
 					ft_lstsize.c \
 					ft_lstadd_front.c \
+					ft_lstadd_back.c \
 
 
 OBJECT_FILES = $(SOURCE_FILES:.c=.o)

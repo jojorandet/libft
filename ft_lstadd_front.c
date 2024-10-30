@@ -6,21 +6,34 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:59:40 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/30 14:01:25 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/30 17:01:59 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!new || !lst)
 		return ;
-	new -> next = *lst;
+	new->next = *lst;
 	*lst = new;
 }
 
+int main()
+{
+	t_list *lst;
 
+	lst = NULL;
+	for (int i = 0; i < 3; i++)
+		ft_lstadd_front(&lst, ft_lstnew(NULL));
+	printf("the current length of the chained list is %d\n", ft_lstsize(lst));
+	ft_lstadd_front(&lst, ft_lstnew(NULL));
+	printf("the length of the chained list after adding one node at the front is %d\n", ft_lstsize(lst));
+	for (int d = 0; d < 2; d++)
+		ft_lstadd_front(&lst, ft_lstnew(NULL));
+	printf("the length after adding the 2 nodes is %d", ft_lstsize(lst));
 
-//lst isthe address of a pointer to the first link of a list
-//new The address of a pointer to the node to be added to the list.
+	return (0);
+}
