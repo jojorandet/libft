@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:59:40 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/29 11:40:22 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/30 14:01:25 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!new || !lst)
-		return (NULL);
+		return ;
 	new -> next = *lst;
 	*lst = new;
 }
