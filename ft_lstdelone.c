@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 13:06:42 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/31 17:32:03 by jrandet          ###   ########.fr       */
+/*   Created: 2024/10/31 15:09:11 by jrandet           #+#    #+#             */
+/*   Updated: 2024/10/31 17:43:00 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list *temp;
-
-	if (!(*lst))
-	{
-		(*lst) = new;
+	if (!lst)
 		return ;
-	}
-	temp = (*lst);
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp->next = new;
+	del(lst->content);
+	free(lst);
 }
 
 /*int main()
 {
 	t_list *lst;
+	t_list *el;
 
 	lst = NULL;
-	for (int d = 0; d < 5; d++)
-		ft_lstadd_back(&lst, ft_lstnew(NULL));
-	printf("the size of the linked chain is %d\n", ft_lstsize(lst));
+	for (int i = 0; i < 3; i++)
+		ft_lstadd_back(&lst, ft_lstnew(malloc(42)));
+	printf("the length of the chained list is %d\n", ft_lstsize(lst));
+
+	el = lst->next;
+	lst->next = el->next;
+	ft_lstdelone(el, &free);
+	printf("the length of the chained list is %d\n", ft_lstsize(lst));
 
 	return (0);
 }*/

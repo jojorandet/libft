@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:59:40 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/30 17:13:19 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/10/31 14:56:22 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-int main()
+/*int main()
 {
 	t_list *lst;
 
@@ -36,4 +36,4 @@ int main()
 	printf("the length after adding the 2 nodes is %d", ft_lstsize(lst));
 
 	return (0);
-}
+}*/
