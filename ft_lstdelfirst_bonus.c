@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelfirst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 16:37:17 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/31 17:42:15 by jrandet          ###   ########.fr       */
+/*   Created: 2024/11/01 16:07:47 by jrandet           #+#    #+#             */
+/*   Updated: 2024/11/02 11:38:01 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	clearnext(t_list *lst, void (*del)(void *))
+void ft_lstdelfirst(t_list **head)
 {
-	if (lst->next)
-		clearnext(lst->next, del);
-	ft_lstdelone(lst, del);
-}
-
-void ft_lstclear(t_list **lst, void (*del)(void *))
-{
-	if (!(*lst))
+	t_list *temp;
+	
+	if (*head == NULL)
+	{ 
 		return ;
-	clearnext((*lst), del);
-	(*lst) = NULL;
+	}
+	temp = (*head);
+	*head = (*head)->next;
+	free(temp->content);
+	free(temp);
 }
