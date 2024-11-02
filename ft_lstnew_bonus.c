@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:53:24 by jrandet           #+#    #+#             */
-/*   Updated: 2024/10/30 15:54:50 by jrandet          ###   ########.fr       */
+/*   Updated: 2024/11/02 15:54:10 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {
@@ -33,7 +33,7 @@ t_list	*ft_lstnew(void *content)
 	a = 42;
 	t_list	*element = ft_lstnew(&a);
 	tmp = element->content;
-	printf("the structure contains as its new content %d as we passed the value 42.\n", *(tmp));
+	printf(" new content %d as we passed the value 42.\n", *(tmp));
 
 	return (0);
 }*/
